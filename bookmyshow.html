@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmyshow</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+      
+
+
+    }
+
+    body {
+        background-color: rgb(224, 224, 223);
+        margin-bottom: -200px;
+        
+    }
+
+    .navbar1 {
+        background-color: rgb(26, 26, 34);
+        display: flex;
+        height: 73px;
+        width: 100%;
+        position: sticky;
+    }
+
+    .navbar2 {
+        background-color: rgb(2, 2, 51);
+        display: flex;
+        height: 55px;
+        justify-content: space-around;
+    }
+
+
+    .row1 span,
+    h2 {
+        margin: 10px 25px;
+    }
+
+    .row1 span img {
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+
+    .logo {
+        font-size: 25px;
+        font-family: cursive;
+        color: white;
+        padding: 22px;
+        margin-left: 58px;
+        cursor: pointer;
+
+    }
+
+    .search input {
+        height: 40px;
+        width: 542px;
+        border-radius: 6px;
+        margin-top: 20px;
+        cursor: pointer;
+        
+    }
+
+    .searchsymbol {
+        color: black;
+        margin: 34px -530px;
+
+
+    }
+
+    .dropdown-menu select {
+        margin: 25px 194px;
+        height: 30px;
+        width: 122px;
+        border-radius: 9px;
+    }
+
+    .signin button {
+        margin-inline: -162px;
+        margin-top: 25px;
+        height: 28px;
+        width: 60px;
+        border-radius: 4px;
+        background: #e53f5c;
+        text-decoration: none;
+
+
+    }
+
+    button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .listicon div {
+
+        color: rgb(241, 241, 241);
+        height: 10px;
+        width: 20px;
+
+
+    }
+
+    /* this code for list icon  */
+    .container {
+        display: inline-block;
+        cursor: pointer;
+        margin: 27px -77px;
+    }
+
+    .row1 {
+        display: flex;
+
+    }
+
+
+    .section1 {
+        margin: 70px 25px;
+        cursor: pointer;
+
+    }
+
+    .section2 .row2 img {
+        margin: 10px 22px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .row2 {
+        display: flex;
+
+    }
+
+    .row2 p {
+        margin: -4px 25px;
+    }
+
+    .row2 p strong {
+        font-size: 20px;
+
+    }
+
+
+
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 19px;
+        height: 1px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .listleft ul {
+        display: flex;
+        margin: 21px 20px;
+    }
+
+    ul li {
+        margin-left: 30px;
+        list-style-type: none;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .listright ul {
+        display: flex;
+        margin: 21px 20px;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: gainsboro;
+    }
+
+    ul li a:hover {
+        color: rgb(245, 217, 179);
+
+
+    }
+
+    .new {
+        color: red;
+        margin: -13px -8px;
+        cursor: pointer;
+    }
+
+
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 12000px;
+        position: relative;
+        margin: 10px;
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 0.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
+    }
+
+
+
+    .premierecontainer {
+        background-color: rgb(35, 35, 56);
+        height: 700px;
+        width: 100%;
+        margin-top: 60px;
+    }
+
+    .premierecontainerflex {
+        display: flex;
+    }
+
+    .premiere {
+        color: rgb(210, 208, 208);
+        padding: 0px 0px;
+        font-size: 13px;
+        margin: 45px 20px;
+    }
+
+    .play-icon {
+        color: rgb(147, 41, 41);
+        font-size: 50px;
+        margin-top: 51px;
+        margin-left: 50px;
+        cursor: pointer;
+    }
+
+    .premiere1 {
+        color: white;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 17px 54px;
+    }
+
+    .premiere1 h5 {
+        font-size: 30px;
+
+    }
+
+    .premiererow {
+        display: flex;
+        margin-left: 19px;
+
+    }
+
+    .premiererow div {
+        margin: 0px 20px;
+    }
+
+    .premiererow div img {
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .premiererow p {
+        font-size: 16px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 19px 1px;
+        cursor: pointer;
+    }
+
+    .section3 {
+        margin: 50px 0px;
+    }
+
+    .section3 h2 {
+        margin: 10px 47px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .section3 .row3 {
+        margin: 3px 27px;
+        display: flex;
+    }
+
+    .section3 .row3 div {
+        margin: 0px 18px;
+    }
+
+    .row3 div img {
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .row3 div p {
+        margin: 14px 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+
+    .row3 div p strong {
+        font-size: 17px;
+
+
+
+    }
+
+    .section4 h2 {
+        margin: 10px 55px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .section4 .row4 {
+        display: flex;
+        margin: 0px 35px;
+    }
+
+    .section4 .row4 img {
+        margin: 10px 20px;
+        border-radius: 7px;
+        cursor: pointer;
+
+    }
+
+    .section4 .row4 p {
+        margin: 5px 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+
+    .section4 .row4 p strong {
+        font-size: 17px;
+
+    }
+
+    .section5 {
+        height: 300px;
+        width: 100%;
+
+    }
+
+    .section5 h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 30px 54px;
+
+    }
+
+    .section5 span {
+        font-size: 17px;
+        color: rgb(247, 7, 7);
+        font-weight: bold;
+    }
+
+    .section5 .firstdiv {
+
+        display: flex;
+        margin: 10px 45px;
+    }
+
+    .section5 .firstdiv p {
+        margin: 0px 20px;
+        border: 1px solid (224, 224, 223);
+        ;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 50px;
+        padding-bottom: 15px;
+        color: gray;
+        background-color: white;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .section5 .seconddiv {
+
+        display: flex;
+        margin: 10px 45px;
+    }
+
+    .section5 .seconddiv p {
+        margin: 8px 20px;
+        border: 1px solid (224, 224, 223);
+        ;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 50px;
+        padding-bottom: 15px;
+        color: gray;
+        background-color: white;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .section6 {
+        margin: -22px 0px;
+    }
+
+
+    .section6 h2 {
+        margin: 10px 55px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .section6 .row6 {
+        display: flex;
+        margin: 0px 35px;
+    }
+
+    .section6 .row6 img {
+        margin: 10px 20px;
+        border-radius: 7px;
+        cursor: pointer;
+
+    }
+
+    .section6 .row6 p {
+        margin: 5px 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+
+    .section6 .row6 p strong {
+        font-size: 17px;
+
+    }
+
+    .footer {
+        height: 2280px;
+        width: 100%;
+        background-color: #2f2f33;
+        margin: 182px 0px;
+    }
+
+    .firstline {
+        color: white;
+        display: inline-block;
+        margin: 40px 30px;
+        font-size: 18px;
+
+    }
+
+    .firstline p {
+        margin: -25px 76px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+
+    }
+
+    .firstline .bi {
+        margin: 10px 20px;
+        font-size: 30px;
+        cursor: pointer;
+
+    }
+
+    .mainfooterimg {
+        display: flex;
+        cursor: pointer;
+        background-color: rgb(66 64 64);
+        height: 123px;
+        width: 100%;
+    }
+
+    .mainfooterimg .footerimg {
+        margin: 29px 155px;
+        font-size: 31px;
+    }
+
+    .mainfooterimg div i {
+        font-size: 42px;
+        margin: 10px 36px;
+    }
+
+    .firstline p span {
+        font-weight: bold;
+        margin-right: 14px;
+    }
+
+    .footerbutton {
+        position: relative;
+        float: right;
+        top: -7px;
+        right: -550px;
+        height: 42px;
+        width: 179px;
+        background: #e53f5c;
+        color: white;
+        font-size: 17px;
+        border-radius: 11px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .footerbutton :hover {
+        color: black
+    }
+
+    .mainfooterimg div p {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #a09b9b;
+        width: 212px;
+        margin: 6px -34px;
+    }
+
+    .mainfooterimg div p:hover {
+        color: white;
+    }
+
+
+
+    .footerheading {
+        margin: 20px 56px;
+    }
+
+    .footerheading div .p1 {
+        color: rgb(165 160 160);
+        font-size: 11px;
+        font-family: arial;
+        margin-top: 28px;
+    }
+
+    .footerheading div .p2 {
+        color: rgb(115, 114, 114);
+        font-size: 12px;
+        margin-top: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+
+    .footerheading div a {
+        text-decoration: none;
+    }
+
+    .footerheading div a p:hover {
+        color: white;
+    }
+
+    .hrline {
+        display: none
+    
+    }
+    .hrline1 {
+        height: 0.5px;
+        width: 40%;
+        background-color: white;
+        margin-left: 20px;
+    }
+
+    .hrline2 {
+        height: 0.5px;
+        width: 40%;
+        background-color: rgb(247, 7, 7);
+        margin: 5px 780px;
+    }
+
+    .footerlogo {
+        font-size: 25px;
+        font-family: cursive;
+        color: white;
+        padding: 22px;
+        margin: -42px 570px;
+        cursor: pointer;
+        width: 203px;
+
+    }
+
+    .footericon {
+        font-size: 22px;
+        margin: 77px 560px;
+        width: 277px;
+    }
+    .footericon i{
+        border: 1px solid rgb(84 80 80);
+    padding: 7px;
+    border-radius: 40px;
+    background-color: #4d4d50;
+    cursor: pointer;
+    }
+    .footericon i:hover{
+        background-color: white;
+        border: none;
+    }
+
+
+    .lastpara {
+        color: #837d7d;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .l1 {
+        margin-left: 493px;
+    }
+
+    .l2 {
+        margin-left: 74px;
+    }
+
+    .l3 {
+        margin-left: 540px;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar1">
+            <div class="logo">
+                Book <span class="innerstyle" style="color:red">My</span>show
+            </div>
+
+
+
+            <div class="search">
+                <input type="search" placeholder=" &nbsp &nbsp &nbsp &nbsp &nbsp Search for movie events and sports">
+
+            </div>
+            <!--<div class="searchsymbol">
+                <i class="bi bi-search"></i>
+            </div>
+             -->
+            <div class="dropdown-menu">
+                <select name="dropdown" id="">
+                    <option value="city">Bhubaneswar</option>
+                    <option value="city">hydrabad</option>
+                    <option value="city">Mumbai</option>
+                    <option value="city">pune</option>
+                    <option value="city">puri</option>
+                </select>
+            </div>
+            <div class="signin">
+                <button> <a href="">Sign in</a></button>
+            </div>
+            <!--  this code for llist icon  -->
+            <div class="container">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+        </nav>
+
+        <nav class="navbar2">
+            <div class="listleft">
+                <ul>
+                    <li><a href="">Movies</a></li>
+                    <li><a href="">Stream</a></li>
+                    <span class="new">new</span>
+                    <li><a href="">Event</a></li>
+                    <li><a href="">Plays</a></li>
+                    <li><a href="">Sports</a></li>
+                    <li><a href="">Activites</a></li>
+                    <li><a href="">Buzz</a></li>
+                </ul>
+            </div>
+            <div class="listright">
+                <ul>
+                    <li><a href="">ListYourShow</a></li>
+                    <li><a href="">Corporates</a></li>
+                    <li><a href="">Offers</a></li>
+                    <li><a href="">Gift Card</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="bookmyshowimg/pic1.png" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="bookmyshowimg/pic2.png" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="bookmyshowimg/pic3.png" style="width:100%">
+                <div class="text"></div>
+            </div>
+
+
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <script>
+                let slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                    setTimeout(showSlides, 3000); // Change image every 2 seconds
+                }
+            </script>
+
+            <div class="section">
+                <h2>Recommended Movie</h2>
+                <div class="row1">
+
+                    <span><img src=" bookmyshowimg/img1.png" alt="img1">
+                        <div>
+                            <H3>Rangabali<br></H3>comedy/ Drama/ Romantic
+                        </div>
+                    </span>
+                    <span><img src=" bookmyshowimg/img2.png" alt="img2">
+                        <div>
+                            <H3>Samajavaragamana<br></H3>comedy/ Drama
+                        </div>
+                    </span>
+                    <span><img src=" bookmyshowimg/img3.png" alt="img3">
+                        <div>
+                            <H3>mission impossible..<br></H3>Action/Adventure/Thriller
+                        </div>
+                    </span>
+                    <span><img src=" bookmyshowimg/img4.png" alt="img4">
+                        <div>
+                            <H3>Rudrangi<br></H3>comedy/ Drama/ Romantic
+                        </div>
+                    </span>
+                    <span><img src=" bookmyshowimg/img5.png" alt="img5">
+                        <div>
+                            <H3>Bhag saale<br></H3>comedy/crime
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="section1">
+                <img src="bookmyshowimg/pic4.png" alt="pic4" style="width:1280px; border-radius: 10px;">
+            </div>
+
+
+            <div class="section2">
+                <h2>The Best Of Live Events</h2>
+                <div class="row2">
+                    <div>
+                        <img src=" bookmyshowimg/img6.png" alt="">
+                        <p><strong>Rangabali</strong><br>comedy/ Drama/ Romantic</p>
+                    </div>
+
+                    <div>
+                        <img src=" bookmyshowimg/img7.png" alt="">
+                        <p><strong>Rangabali</strong><br>comedy/ Drama/ Romantic</p>
+                    </div>
+                    <div>
+                        <img src=" bookmyshowimg/img8.png" alt="">
+                        <p><strong>Rangabali</strong><br>comedy/ Drama/ Romantic</p>
+                    </div>
+                    <div>
+                        <img src=" bookmyshowimg/img9.png" alt="">
+                        <p><strong>Rangabali</strong><br>comedy/ Drama/ Romantic</p>
+                    </div>
+                    <div>
+                        <img src=" bookmyshowimg/img10.png" alt="">
+                        <p><strong>Rangabali</strong><br>comedy/ Drama/ Romantic</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="premierecontainer">
+            <div class="premierecontainerflex">
+                <div class="play-icon">
+                    <i class="bi bi-play-circle-fill"></i>
+                </div>
+                <div class="premiere">
+                    <h1> PREMIERE</h1><br>
+                    <p>Watch New Movies at Home Every Friday</p>
+                </div>
+            </div>
+            <div class="premiere1">
+                <h5>premieres</h5>
+                <p>Brand New Releases Every Friday</p>
+
+            </div>
+
+            <div class="premiererow">
+                <div>
+                    <img src=" bookmyshowimg/img11.png" alt="image">
+                    <p><Strong>Winnie the Pooh: Blood and Honey</Strong><br>English</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img12.png" alt="image">
+                    <p><Strong>Joyland</Strong><br>Urdu</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img13.png" alt="image">
+                    <p><strong>The Five Devils</Strong><br>French</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img14.png" alt="image">
+                    <p><Strong>The Trick</Strong><br>English</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img15.png" alt="image">
+                    <p><strong>Winnie the Pooh: Blood and Honey </strong><br>English</p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="section3">
+            <H2>Events Happening near You</H2>
+            <div class="row3">
+                <div>
+                    <img src=" bookmyshowimg/img17.png" alt="image">
+                    <p><Strong>Smooth Kullu Smooth by Aaditya Kulshreshtha</Strong><br>Stand up Comedy | Hindi | 1hr
+                        30mins</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img18.png" alt="image">
+                    <p><Strong>Sundeep Sharma Live</Strong><br>Stand up Comedy | Hindi | 16yrs + | 1hr 15mins</p>
+
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img19.png" alt="image">
+                    <p><Strong>Kal Ki Chinta Nahi Karta ft. Ravi Gupta</Strong><br>Comedy Shows | Hindi | 16yrs + | 1hr
+                        15mins</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img20.png" alt="image">
+                    <p><Strong>Aakash Mehta - The Dark Tour (Stand up Comedy)</Strong><br>Comedy | 18yrs + | 1hr 30mins
+                    </p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img21.png" alt="image">
+                    <p><Strong>Vipul Goyal Live</Strong><br>Comedy Shows | Hindi, English | 16yrs + | 1hr 15mins
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section4">
+            <H2>Events Happening near You</H2>
+            <div class="row4">
+                <div>
+                    <img src=" bookmyshowimg/img22.png" alt="image">
+                    <p><Strong>Habitology Secrets 101: Raising Habit Savvy Kids</Strong><br>Education, Masterclass,
+                        Wellness | English | 21yrs + | 1hr 30mins</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img23.png" alt="image">
+                    <p><Strong>Blind Dating 20+ Florican</Strong><br>Dating | English | 21yrs + | 1hr</p>
+
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img24.png" alt="image">
+                    <p><Strong>Art and Craft Online Workshop</Strong><br>Arts and Crafts | English, Hindi | 5yrs + | 1hr
+                        30mins
+                    </p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img25.png" alt="image">
+                    <p><Strong>Blind Dating 40+ - Florican</Strong><br>Dating | English, Hindi | 1hr</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img26.png" alt="image">
+                    <p><Strong>Saikiran - Rolling New Jokes</Strong><br>Comedy | English | 16yrs + | 1hr 10mins </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section5">
+
+            <H2>Trending Searches Right Now</H2>
+            <div class="firstdiv">
+                <div calss="p1">
+                    <p><span>Openheimer</span><br>Movie</p>
+
+                </div>
+                <div class="p2">
+                    <p><span>M.S Dhoni: The Untold Story</span><br>Movie</p>
+
+                </div>
+                <div class="p3">
+                    <p><span>Samajavaragamana</span><br>Movies</p>
+                </div>
+                <div class="p4">
+                    <p><span>Baby(2023)</span><br>Movies</p>
+                </div>
+                <div class="p5">
+                    <p><span>Adipurush</span><br>Movies</p>
+                </div>
+
+            </div>
+
+            <div class="seconddiv">
+
+                <div calss="p1">
+                    <p><span>Insidious:The Red Door</span><br>Movie</p>
+
+                </div>
+                <div class="p2">
+                    <p><span>Rangabali</span><br>Movie</p>
+
+                </div>
+                <div class="p3">
+                    <p><span>Vimanam</span><br>Movies</p>
+                </div>
+                <div class="p4">
+                    <p><span>Barbie</span><br>Movies</p>
+                </div>
+                <div class="p5">
+                    <p><span>Bro</span><br>Movies</p>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <div class="section6">
+            <H2>Explore Fun Activities</H2>
+            <div class="row6">
+                <div>
+                    <img src=" bookmyshowimg/img27.png" alt="image">
+                    <p><Strong>Ramoji Film City Studio Tour</Strong><br>
+                        Adventure Parks, Resorts, Theme parks | Hindi, Telugu, English | 8hrs 30mins
+                    </p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img28.png" alt="image">
+                    <p><Strong>Stay Package @ The Hidden Castle</Strong><br>Adventure Parks, Trekking, Resorts |
+                        English, Hindi, Telugu | 22hrs
+
+                    </p>
+
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img29.png" alt="image">
+                    <p><Strong>Snow Kingdom Hyderabad
+                        </Strong><br>Snow Parks | English | 45mins</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img30.png" alt="image">
+                    <p><Strong>Maa Kamakhya Devi Prasad</Strong><br>Unique Tours</p>
+                </div>
+                <div>
+                    <img src=" bookmyshowimg/img31.png" alt="image">
+                    <p><Strong>Explore Shimla - Manali (5 Nights/6 Days)</Strong><br>Unique Tours | 24hrs </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <div class="footer">
+
+            <div class="firstline">
+                <i class="bi bi-houses-fill"></i>
+                <p><span>List Your Show </span> Got a Show Event Activity Or a Great Experience</p>
+                <button class="footerbutton">Contact Today!</button></a>
+
+
+            </div>
+            <div class="mainfooterimg">
+                <div class=footerimg>
+                    <i class="bi bi-telephone-fill"></i>
+                    <P>24/7 CUSTOMER CARE SUPPORT</P>
+                </div>
+                <div class=footerimg>
+                    <i class="bi bi-ticket-perforated"></i>
+                    <P>RESEND BOOKING CONFIRMOTION</P>
+                </div>
+                <div class=footerimg>
+                    <i class="bi bi-envelope-paper"></i>
+                    <P>SUBSCRIBE TO THE NEWS LATER</P>
+                </div>
+
+
+            </div>
+
+            <div class="footerpara">
+                <div class="footerheading">
+                    <div>
+                        <p class="p1"> MOVIES NOW SHOWING IN HYDERABAD</p>
+                        <a href="">
+                            <p class="p2">Mission Impossible: Dead Reckoning - Part One | Samajavaragamana | Rangabali |
+                                Insidious: The
+                                Red
+                                class="p1" Door | Rudrangi | Spy | Satyaprem Ki Katha | Oppenheimer | Bhaag Saale |
+                                Neeyat</p>
+
+                    </div>
+                    <div>
+                        <p class="p1"> UPCOMING MOVIES IN HYDERABAD</p>
+                        <a href="">
+                            <p class="p2">Ghost | The Fighter Suman | Samaresh Basu-R Projapoti | Namasthe Ghost |
+                                Damayana | Vajood |
+                                Kade
+                                Dade Diyan Kade Pote Diyan | Terrace | Voice of Sathyanathan | Ajmer 92 | Rahasyadeep |
+                                Baby
+                                (2023)
+                                | Bharateeyans | Date Bhet | Revenge | Valatty | Chaver | Barbie | Hostel Hudugaru
+                                Bekagiddare |
+                                Hatya (Telugu)</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> MOVIES BY GENRE</p>
+                        <a href="">
+                            <p class="p2"> Drama Movies | Action Movies | Thriller Movies | Comedy Movies | Romantic
+                                Movies | Adventure Movies
+                                | Crime Movies | Animation Movies | Horror Movies | Mystery Movies | Fantasy Movies |
+                                Sci-Fi Movies
+                                | Adaptation Movies | Devotional Movies | Mythological Movies | Noir Movies | Political
+                                Movies |
+                                Supernatural Movies | Sports Movies | Heist Movies | Suspense Movies | Historical Movies
+                                | Tragedy
+                                Movies | Anime Movies | Psychological Movies | Biography Movies | War Movies | Period
+                                Movies |
+                                Classic Movies | Musical Movies | Adult Movies | Screening Movies | Bollywood Movies</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> MOVIES BY LANGUAGE</p>
+                        <a href="">
+                            <p class="p2">Movies in English |Movies in Telugu | Movies in Hindi | Movies in Tamil |
+                                Movies in Chattisgarhi |
+                                Movies in Khasi | Movies in English 7D | Movies in Nepali | Movies in Portuguese |
+                                Movies in French
+                                | Movies in Bhojpuri | Movies in Tulu | Movies in Assamese | Movies in Haryanavi |
+                                Movies in
+                                Japanese | Movies in Sindhi | Movies in Urdu | Movies in Malayalam | Movies in Odia |
+                                Movies in
+                                Gujarati | Movies in Konkani | Movies in Kannada | Movies in Bengali | Movies in Marathi
+                                | Movies in
+                                Rajasthani | Movies in Punjabi</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> PLAYS BY GENRE IN HYDERABAD</p>
+                        <a href="">
+                            <p class="p2">Comedy Plays | Action Plays | Adaptation Plays | Mythological Plays | Noir
+                                Plays | Online Streaming
+                                Plays Plays | Political Plays | Tribute Plays | Suspense Plays | Historical Plays |
+                                Thriller Plays |
+                                Tragedy Plays | Horror Plays | Psychological Plays | Mystery Plays | Romantic Plays |
+                                Broadway Plays
+                                | Biography Plays | War Plays | Period Plays | Classic Plays | Adventure Plays | Musical
+                                Plays |
+                                Adult Plays | Fantasy Plays | Drama Plays | Contemporary Plays | Sci-Fi Plays | Regional
+                                Plays</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1">MOVIE REVIEWS AND TRENDING ARTICLES</p>
+                        <a href="">
+                            <p class="p2"> Trending Articles | Latest News on Movies, Events, Plays and Sports | Movie
+                                Celebrities</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1">MOVIE UPDATES AND CELEBRITIES</p>
+                        <a href="">
+                            <p class="p2">Upcoming Movies | Movies Now Showing | Movie Celebrities</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1">THINGS TO DO IN HYDERABAD</p>
+                        <a href="">
+                            <p class="p2"> Adventure | Amusement Parks | Festivals | Durga Puja Festival | Food and
+                                Drinks | Holi Parties |
+                                Antiques, Heritage, Museums | Christmas Celebrations | Hilsa Festival | Gaming |
+                                Hospitals | Poila
+                                Baishakh Festival | Parties | Unique Tours | Navratri | Quizzes and Competitions | Shops
+                                and Malls |
+                                Tourist Attractions | Monuments | Nightlife | Valentine's Day Celebrations</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> SPORTS EVENTS IN HYDERABAD</p>
+                        <a href="">
+                            <p class="p2"> Online Games | E Sports | Chess | Athletics | Archery | Baseball | Badminton
+                                | Cycling | Golf |
+                                Kickboxing | Boat Race | Boxing | Card Games | Cricket | Derby Horse Race | Football |
+                                Kabaddi |
+                                Mixed Martial Arts | Online Sports | Muay Thai | Swimming Pool | Rugby | Hockey | Ice
+                                Skating | Judo
+                                | Triathlon | Motorsports | Walking | Shooting | Running | Tennis | Wrestling | Sailing
+                                | Snooker |
+                                Basketball | Bowling | Polo | Volleyball | Table Tennis | Weight Lifting</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> EVENTS IN HYDERABAD</p>
+                        <a href="">
+                            <p class="p2"> Workshops | Comedy Shows | Music Shows | Spirituality | Kids | Meetups |
+                                Conferences | Beer Festival
+                                | Exhibitions | Celebrity Wishes | Award shows | Online Streaming Events | Screening |
+                                Vaccination |
+                                Talks | New Year Parties</p>
+                        </a>
+
+                    </div>
+                    <div>
+                        <p class="p1"> CINEMAS IN TOP CITIES</p>
+                        <a href="">
+                            <p class="p2">Cinemas in Mumbai | Cinemas in Delhi-NCR | Cinemas in Chennai | Cinemas in
+                                Bengaluru | Cinemas in
+                                Hyderabad | Cinemas in Pune | Cinemas in Ahmedabad | Cinemas in Kolkata | Cinemas in
+                                Kochi</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> EVENTS IN TOP CITIES</p>
+                        <a href="">
+                            <p class="p2">
+                                Events in Mumbai | Events in Delhi-NCR | Events in Chennai | Events in Bengaluru |
+                                Events in
+                                Hyderabad | Events in Pune | Events in Ahmedabad | Events in Kolkata | Events in Kochi
+                            </p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> PLAYS IN TOP CITIES</p>
+                        <a href="">
+                            <p class="p2">Plays in Mumbai | Plays in Delhi-NCR | Plays in Chennai | Plays in Bengaluru |
+                                Plays in Hyderabad |
+                                Plays in Pune | Plays in Ahmedabad | Plays in Kolkata | Plays in Kochi</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> ACTIVITIES IN TOP CITIES</p>
+                        <a href="">
+                            <p class="p2"> Things to do in Mumbai | Things to do in Delhi-NCR | Things to do in Chennai
+                                | Things to do in
+                                Bengaluru | Things to do in Hyderabad | Things to do in Pune | Things to do in Ahmedabad
+                                | Things to
+                                do in Kolkata | Things to do in Kochi</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> MOVIES IN TOP CITIES</p>
+                        <a href="">
+                            <p class="p2"> Movies in Mumbai | Movies in Delhi-NCR | Movies in Chennai | Movies in
+                                Bengaluru | Movies in
+                                Hyderabad | Movies in Pune | Movies in Ahmedabad | Movies in Kolkata | Movies in Kochi
+                            </p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> COUNTRIES</p>
+                        <a href="">
+                            <p class="p2"> Indonesia
+                                UAE | Sri Lanka
+                                | West Indies</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1"> HELP</p>
+                        <a href="">
+                            <p class="p2">About Us | Contact Us | Current Opening | Press Release | Press Coverage |
+                                Sitemap | FAQs | Terms
+                                and Conditions | Privacy Policy</p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="p1">BOOKMYSHOW EXCLUSIVES</p>
+                        <a href="">
+                            <p class="p2"> Lollapalooza India | Superstar | BookASmile | Corporate Vouchers | Gift Cards
+                                | List My Show |
+                                Offers | Stream | Buzz | Movie Trailers | Summer Activities
+                            </p>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <br><br><br><br><br>
+            <div class="hrline">
+                <div class="hrline1"></div>
+                <div class="footerlogo">
+                    Book <span class="innerstyle" style="color:red">My</span>show
+                </div>
+                <div class="hrline2"></div>
+            </div>
+
+
+            <div class="footericon">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-youtube"></i>
+                <i class="bi bi-pinterest"></i>
+                <i class="bi bi-linkedin"></i>
+            </div>
+            <div class=lastpara>
+                <p class="l1">Copyright 2023 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved </p>
+                <p class="l2">content and images used on this site are copyright protected and copyrights vests with the
+                    respective owners. The usage of the content and images on this website is intended to promote the
+                    works and no endorsement of the artist shall be implied.</p>
+                <p class="l3">Unauthorized use is prohibited and punishable by law.</p>
+            </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+<!--
+
+
+  div class="search">
+                    <span class="searchsymbol">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="search" placeholder=" &nbsp &nbsp &nbsp &nbsp &nbsp Search for movie events and sports">
+
+                </div>
